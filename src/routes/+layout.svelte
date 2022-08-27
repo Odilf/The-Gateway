@@ -22,7 +22,7 @@
 	</navbar>
 </header>
 
-<main class="inset-0 flex flex-col flex-wrap justify-center items-center relative min-h-[85vh] max-w-3xl mx-auto">
+<main class="inset-0 flex flex-col flex-wrap justify-center items-center relative min-h-[85vh] max-w-3xl mx-auto max-w-screen">
 	<slot/>
 </main>
 

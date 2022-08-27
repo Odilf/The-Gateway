@@ -9,7 +9,7 @@
 	
 </script>
 
-<ul class='flex gap-4 items-center'>
+<ul class='flex gap-4 items-center flex-wrap justify-center'>
 	{#each bookmarks as bookmark (bookmark.url)}
 		<li animate:flip in:scale out:fade|local>
 			<Bookmark {...bookmark} on:delete {hideTags}/>
