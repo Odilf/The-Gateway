@@ -1,0 +1,7 @@
+<script lang="ts">
+	import '@unocss/reset/tailwind.css'
+	import '@kidonng/daisyui/index.css'
+	import 'uno.css'
+</script>
+
+<slot/>
