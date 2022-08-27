@@ -17,6 +17,11 @@
 			<span class="label-text text-lg"> Group by tag </span> 
 			<input type="checkbox" class="toggle" bind:checked={$settings.groupByTag} />
 		</label>
+
+		<label class="label cursor-pointer mt-4">
+			<span class="label-text text-lg"> Open in new tab </span> 
+			<input type="checkbox" class="toggle" bind:checked={$settings.openInNewTab} />
+		</label>
 		
 	</div>
 </section>
