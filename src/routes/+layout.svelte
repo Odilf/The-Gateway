@@ -4,4 +4,12 @@
 	import 'uno.css'
 </script>
 
-<slot/>
+<main class="inset-0 flex flex-col justify-center items-center">
+	<slot/>
+</main>
+
+<style global lang='postcss'>
+	body {
+		@apply bg-neutral;
+	}
+</style>
