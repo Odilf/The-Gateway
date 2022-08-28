@@ -6,6 +6,8 @@
 
 	export let bookmarks: BookmarkType[]
 	export let hideTags = false
+
+	
 	
 </script>
 

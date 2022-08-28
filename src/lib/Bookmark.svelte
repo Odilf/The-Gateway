@@ -10,6 +10,7 @@
 
 <script lang="ts">
 	import EditPopup from "./Popup.svelte";
+	import Tag from "./Tag.svelte";
 
 	export let name: string
 	export let url: string
@@ -30,7 +31,7 @@ on:contextmenu|preventDefault={() => editing = true}>
 	{#if !hideTags}
 		<div class='flex flex-wrap gap-2'>
 			{#each tags as tag}
-				<span class='badge badge-secondary'> #{tag} </span>
+				<Tag {tag} />
 			{/each}
 		</div>
 	{/if}

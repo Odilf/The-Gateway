@@ -15,10 +15,6 @@
 
 	const dispatch = createEventDispatcher<{ submit: BookmarkType, delete: BookmarkType }>()
 
-	function removeTag(tag: string) {
-		tags = tags.filter(t => t !== tag)
-	}
-
 	function pruneTags(tags: string[]) {
 		return [...new Set(tags.filter(tag => tag !== ""))]
 	}
@@ -47,16 +43,6 @@
 			</label> 
 			<textarea id=tags bind:value={tagInput} type="text" placeholder="productivity, media..." class="textarea textarea-bordered w-full max-w-xs" />
 		</div>
-
-		<!-- <div class='flex flex-wrap gap-2'>
-			{#each tags as tag}
-				<button class='badge badge-secondary' on:click={() =>  removeTag(tag)}> #{tag} </button>
-			{/each}
-		</div> -->
-		
-		<!-- {#if tags.length}
-			<span class="label-text"> Click on a tag to delete it </span>
-		{/if} -->
 
 		<div class="card-actions justify-end">
 			{#if mode === 'adding'}
