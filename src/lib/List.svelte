@@ -13,7 +13,7 @@
 
 <ul class='flex flex-col gap-4 items-center flex-wrap justify-center'>
 	{#each bookmarks as bookmark (bookmark.url)}
-		<li animate:flip in:scale out:fade|local>
+		<li animate:flip in:scale|local out:fade|local>
 			<Bookmark {...bookmark} on:delete {hideTags}/>
 		</li>
 	{/each}
