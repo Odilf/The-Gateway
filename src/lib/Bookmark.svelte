@@ -1,17 +1,15 @@
 <script lang='ts' context='module'>
-import { writable } from "svelte-local-storage-store";
+	import { settings } from "./db";
 
 	export interface BookmarkType {
 		name: string,
 		url: string,
 		tags: string[],
 	}
-
-	const settings = writable<any>("settings", {})
 </script>
 
 <script lang="ts">
-	import EditPopup from "./EditPopup.svelte";
+	import EditPopup from "./Popup.svelte";
 
 	export let name: string
 	export let url: string

@@ -11,12 +11,7 @@
 
 	let tagInput = ""
 
-	$: if (tagInput.at(-1) === " ") {
-		const tag = tagInput.trimEnd()
-		tag && tags.push(tag)
-		prugeTags()
-		tagInput = ''
-	}
+	$: tags = pruneTags(tagInput.split(" "))
 
 	const dispatch = createEventDispatcher<{ submit: BookmarkType, delete: BookmarkType }>()
 
@@ -24,8 +19,8 @@
 		tags = tags.filter(t => t !== tag)
 	}
 
-	function prugeTags() {
-		tags = [...new Set(tags)]
+	function pruneTags(tags: string[]) {
+		return [...new Set(tags.filter(tag => tag !== ""))]
 	}
 </script>
 
@@ -50,18 +45,18 @@
 			<label class="label mt-4" for='tags'>
 				<span class="label-text"> Tags </span>
 			</label> 
-			<input id=tags bind:value={tagInput} type="text" placeholder="productivity, media..." class="input input-bordered w-full max-w-xs" />
+			<textarea id=tags bind:value={tagInput} type="text" placeholder="productivity, media..." class="textarea textarea-bordered w-full max-w-xs" />
 		</div>
 
-		<div class='flex flex-wrap gap-2'>
+		<!-- <div class='flex flex-wrap gap-2'>
 			{#each tags as tag}
 				<button class='badge badge-secondary' on:click={() =>  removeTag(tag)}> #{tag} </button>
 			{/each}
-		</div>
+		</div> -->
 		
-		{#if tags.length}
+		<!-- {#if tags.length}
 			<span class="label-text"> Click on a tag to delete it </span>
-		{/if}
+		{/if} -->
 
 		<div class="card-actions justify-end">
 			{#if mode === 'adding'}

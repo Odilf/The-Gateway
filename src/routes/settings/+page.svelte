@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { writable } from "svelte-local-storage-store";
-
-	const projectName = writable<string>('project-name', "")
-	const settings = writable<any>('settings', {})
+	import { settings } from "$lib/db";
 </script>
 
 <section class='text-neutral-content'>
@@ -10,7 +7,7 @@
 		<label class="label font-light" for='project-name'>
 		  <span class="label-text"> Project name </span>
 		</label>
-		<input type="text" bind:value={$projectName} class="input input-lg font-black input-bordered w-full max-w-xs" />
+		<input type="text" bind:value={$settings.projectName} class="input input-lg font-black input-bordered w-full max-w-xs" />
 
 
 		<label class="label cursor-pointer mt-4">

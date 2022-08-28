@@ -12,7 +12,6 @@
 	export let tags: string[] = []
 
 	const dispatch = createEventDispatcher<{ submit: BookmarkType }>()
-	
 </script>
 
 {#if active}
